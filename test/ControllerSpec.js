@@ -1,4 +1,19 @@
-/*global app, jasmine, describe, it, beforeEach, expect */
+/* This test fails if year =/= parseInt(year) */
+let year = 2022;
+let strYear;
+describe("Get year date", () => {
+  /*  it("should be a number", () => {
+    year = parseInt(year);
+    expect(year).toBe(2022);
+  }); */
+  beforeEach(() => {
+    year++;
+    strYear = year.toString();
+  });
+  it("should be next year as String", () => {
+    expect(strYear).toBe("2023");
+  });
+});
 
 describe("controller", function () {
   "use strict";
@@ -64,8 +79,13 @@ describe("controller", function () {
   });
   describe("start-up", function () {
     it("should show entries on start-up", function () {
-      // TODO: write test
-      console.log("Test");
+      // TODO: write test --> controller.js ligne 64
+      var todo = { title: "my todo" };
+      setUpModel([todo]);
+
+      subject.setView("");
+
+      expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
     });
   });
 
@@ -89,11 +109,23 @@ describe("controller", function () {
     });
 
     it("should show active entries", function () {
-      // TODO: write test
+      // TODO: write test --> controller.js ligne 74
+      let todo = { title: "my todo" };
+      setUpModel([todo]);
+
+      subject.setView("#/active");
+
+      expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
     });
 
     it("should show completed entries", function () {
-      // TODO: write test
+      // TODO: write test  --> controller.js ligne 84
+      let todo = { title: "my todo" };
+      setUpModel([todo]);
+
+      subject.setView("#/completed");
+
+      expect(view.render).toHaveBeenCalledWith("showEntries", [todo]);
     });
   });
 
