@@ -172,16 +172,32 @@ describe("controller", function () {
   });
 
   it('should highlight "All" filter by default', function () {
-    // TODO: write test
+    // TODO: write test  --> controller.js ligne 280
+    var todo = { id: 46, title: "my todoTT", completed: false };
+    setUpModel([todo]);
+    subject.setView("");
+    expect(view.render).toHaveBeenCalledWith("setFilter", "");
   });
 
   it('should highlight "Active" filter when switching to active view', function () {
     // TODO: write test
+    var todo = { id: 46, title: "my neww", completed: false };
+    setUpModel([todo]);
+    subject.setView("/active");
+    expect(view.render).toHaveBeenCalledWith("setFilter", "active");
+    expect(model.read).toHaveBeenCalledWith(
+      { completed: false },
+      jasmine.any(Function)
+    );
+    expect(model.read).not.toHaveBeenCalledWith(
+      { completed: true },
+      jasmine.any(Function)
+    );
   });
 
   describe("toggle all", function () {
     it("should toggle all todos to completed", function () {
-      // TODO: write test
+      // TODO: write test ->controller.js ligne 218
     });
 
     it("should update the view", function () {
