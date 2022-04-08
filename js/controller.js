@@ -92,7 +92,8 @@
    * An event to fire whenever you want to add an item. Simply pass in the event
    * object and it'll handle the DOM insertion and saving of the new item.
    */
-  /* ERREUR : Controller.prototype.adddItem = function (title) { */
+
+  /* ERREUR corrigée : Controller.prototype.adddItem = function (title) { */
   Controller.prototype.addItem = function (title) {
     var self = this;
 
