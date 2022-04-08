@@ -41,3 +41,10 @@ Documenter les éléments suivants :
     outil : js doc nmp
 
     Exmples de documentation https://www.atlassian.com/blog/add-ons/5-real-life-examples-beautiful-technical-documentation
+
+Documentation technique :
+Lien vers les documents techniques des fichiers de l’application Todo-List :
+http://www.todolist-doc.dragondor.ovh/
+
+Site Todolist version modifiée en ligne
+http://www.todolist.dragondor.ovh/
